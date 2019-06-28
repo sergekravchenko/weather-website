@@ -12,7 +12,9 @@ const forecast = (latitude, longitude, callback) => {
             callback(undefined,
                 body.daily.data[0].summary + ' Зараз ' + body.currently.temperature +
                 ' градусів, відчувається як ' + body.currently.apparentTemperature + ', '
-                + body.currently.precipProbability + '% що буде дощ'
+                + body.currently.precipProbability + '% що буде дощ.\n Mаксимальна температура сьогодні: ' +
+                body.daily.data[0].temperatureHigh + ', мінімальна температура сьогодні: ' + 
+                body.daily.data[0].temperatureLow
             )
         }
     })
